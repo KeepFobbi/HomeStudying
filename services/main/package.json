@@ -1,0 +1,33 @@
+{
+  "name": "main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production babel ./src/ -d ./dist/",
+    "oldStart": "NODE_ENV=production node -r @babel/polyfill ./dist/index.js",
+    "start": "node -r dotenv/config -r @babel/register -r @babel/polyfill ./src/index.js",
+    "prod": "npm run start --deploymentPoint=production",
+    "dev": "npm run start --deploymentPoint=development"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "generate-password": "^1.5.1",
+    "lodash": "^4.17.15",
+    "mysql2": "^2.3.0",
+    "sha1": "^1.1.1",
+    "uuid": "^7.0.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
+    "dotenv": "^8.2.0"
+  }
+}
